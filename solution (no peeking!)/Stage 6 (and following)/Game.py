@@ -50,10 +50,7 @@ class Game:
         if self.enemy_fleet_was_destroyed:
             self.enemy_fleet_was_destroyed = False
             channel = self.sound_to_play_when_win.play()
-            while channel.get_busy():  # Wait for sound to finish.
-                pygame.time.wait(50)
-            pygame.time.wait(100)
-            self.start_a_new_game(self.enemies.enemy_rows + 1)
+            self.game_is_over = True
         elif len(self.enemies.list_of_enemies) == 0:
             # Just set a flag for the next iteration of run_one_cycle,
             # so that any events not yet processed can be processed.
