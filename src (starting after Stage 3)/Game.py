@@ -12,8 +12,8 @@ class Game:
     def __init__(self, screen: pygame.Surface):
         self.screen = screen
         self.fighter = Fighter(screen)
-        self.enemies = Enemies()
-        self.missiles = Missiles()
+        self.enemies = Enemies(screen)
+        self.missiles = Missiles(screen)
         self.enemy = Enemy(screen)  # For testing
         self.missile = Missile(screen, 100, 300)  # For testing
 
